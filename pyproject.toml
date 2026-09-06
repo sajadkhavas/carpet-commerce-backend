@@ -3,7 +3,7 @@ DJANGO_SETTINGS_MODULE = "config.settings.test"
 python_files = ["test_*.py", "*_test.py", "tests.py"]
 addopts = "-ra --strict-markers --strict-config"
 filterwarnings = [
-  "error::rest_framework.deprecation.RemovedInNextDRFVersionWarning",
+  "error::DeprecationWarning:rest_framework.*",
   "error::DeprecationWarning:apps.*",
 ]
 
