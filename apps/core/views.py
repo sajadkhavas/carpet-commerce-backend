@@ -1,16 +1,19 @@
 from django.core.cache import cache
 from django.db import connection
 from django.http import JsonResponse
+from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
+from drf_spectacular.utils import extend_schema
 from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 
 
+@method_decorator(never_cache, name="dispatch")
 class HealthView(APIView):
     authentication_classes = []
     permission_classes = [AllowAny]
 
-    @never_cache
+    @extend_schema(exclude=True)
     def get(self, request):
         return JsonResponse(
             {
@@ -20,11 +23,12 @@ class HealthView(APIView):
         )
 
 
+@method_decorator(never_cache, name="dispatch")
 class ReadinessView(APIView):
     authentication_classes = []
     permission_classes = [AllowAny]
 
-    @never_cache
+    @extend_schema(exclude=True)
     def get(self, request):
         checks = {
             "database": self._database_ready(),
