@@ -2,7 +2,7 @@
 
 | Phase | Scope | Status |
 | --- | --- | --- |
-| B00 | Foundation & Architecture | IN PROGRESS |
+| B00 | Foundation & Architecture | DONE |
 | B01 | Identity & Authentication | PLANNED |
 | B02 | Catalog Taxonomy | PLANNED |
 | B03 | Carpet Product Model | PLANNED |
