@@ -139,10 +139,9 @@ LOGGING = {
     "formatters": {
         "jsonish": {
             "format": (
-                '{"level":"{levelname}","time":"{asctime}",'
-                '"logger":"{name}","message":"{message}"}'
-            ),
-            "style": "{",
+                '{"level":"%(levelname)s","time":"%(asctime)s",'
+                '"logger":"%(name)s","message":"%(message)s"}'
+            )
         }
     },
     "handlers": {
